@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<style>
+  html *
+{
+   font-family: Arial !important;
+}
+.container {
+  height: 230px;
+  position: relative;
+}
+.center {
+  margin: 0;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+button {
+    width : 120px;
+    padding: 8px;
+    margin: 2px;
+    border: none;
+    box-sizing: border-box;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    color:rgb(95, 95, 95);
+    cursor: pointer;
+  }
+</style>
+<script src="game_script.js"> </script>
+  <head>
+    <div class="container">
+      <div class="center">
+        <h2>Let's play rock, paper, scissor!</h2>
+        <p>Make your selection</h2>
+        <form style="padding10px">
+          <button onClick="choose('rock')">Rock</button>
+          <button onClick="choose('paper')">Paper</button>
+          <button onClick="choose('scissors')">Scissor</button>
+            <script>
+                var user;
+                function choose(choice){
+                user = choice;
+                      }
+                function test(click){
+                alert("You chose " + user);
+                    }        
+            </script>
+         </form>
+         <p>
+          <div id="game"></div>
+          <div id="button"></div>
+        </p>
+    </div>
+      </div>
+  </head>
+  <body>
+  </body> 
+</html>
+
