@@ -1,109 +1,110 @@
-//random CPU choice
+//inital random CPU choice function 
+
 var things = ['rock', 'paper', 'scissor'];
-var compSelection = things[Math.floor(Math.random()*things.length)];
-
-//popup player selection
-let playerSelection = prompt("Let's play, rock, paper, or scissor?");
-
-//make button selection = playerSelection
-
-function buttontest() {
-  document.getElementById("demo").innerHTML = "Hello World";
+function comp_choice(things){
+    return things[Math.floor(Math.random()*things.length)];
 }
 
-/*
-function button_Selection(choice){
-  var button = document.getElementById('button') .Value;
+var compSelection;
+
+function set_cpu_choice(things){
+    compSelection = comp_choice(things);
 }
 
-  let choice = button_Selection(playerSelection,compSelection);
-  const button = document.getElementById('choice');
-  button.innerHTML = choice;
+function set_compSelection(things){
+compSelection = comp_choice(things);}
 
-*/
-  //choice output to console
-function player_choice(playerSelection) {
-    console.log ("You chose " + playerSelection)
-    }
-
-function random_choice(compSelection) {
-    console.log ("Computer chose " + compSelection)
-    }
+var compSelection = comp_choice(things)
 
 
-player_choice(playerSelection);
-random_choice(compSelection);
+//Check choices on console
 
 
-//game output to consol
-function play_round(playerSelection,compSelection) {
-  if (playerSelection == compSelection) {
-    console.log ("tie!")
+function print_cpu_choice(compSelection) {
+  console.log ("Computer chose " + compSelection)
   }
-  if (playerSelection == "rock" && compSelection == "scissor") {
-    console.log ("You win! Rock breaks scissors!")
-  }
-  if (playerSelection == "rock" && compSelection == "paper") {
-    console.log ("You lose! Paper cover rock!")
-  }
-  if (playerSelection == "paper" && compSelection == "scissor") {
-    console.log ("You lose! Scissor cuts paper!")
-  }
-  if (playerSelection == "paper" && compSelection == "rock") {
-    console.log ("You win! Paper covers rock!")
-  }
-  if (playerSelection == "scissor" && compSelection == "rock") {
-    console.log ("You lose! Rock breaks scissors!")
-  }
-  if (playerSelection == "scissor" && compSelection == "paper") {
-    console.log ("You win! Scissor cuts paper!")
-  }
-}
 
+function print_user_choice(user) {
+  console.log ("Computer chose " + user)
+  }
+
+function print_choices(user, compSelection){
+  console.log("Computer chose " + compSelection + ", user chose " + user);
+  }
+
+//user button variable change
 var user;
 function choose(choice){
     user = choice;
 }
 
 function test(click){
-    alert("You chose " + user);
-}        
+    console.log ("You chose " + user);
+}      
 
+//push player choices to console
 
-//correct game result function
-  function gameresult (playerSelection,compSelection)
-  {
-     if (playerSelection == compSelection) {
-       return "Tie!";
-      }
-     if (playerSelection == "rock" && compSelection == "scissor") {
-      return "You win! Rock breaks scissors!";
-      }
-     if (playerSelection == "rock" && compSelection == "paper") {
-      return "You lose! Paper cover rock!";
-        }
-     if (playerSelection == "paper" && compSelection == "scissor") {
-      return "You lose! Scissor cuts paper!";
-          }
-     if (playerSelection == "paper" && compSelection == "rock") {
-      return "You win! Paper covers rock!";
-          }
-     if (playerSelection == "scissor" && compSelection == "rock") {
-       return "You lose! Rock breaks scissors!";
-          }
-     if (playerSelection == "scissor" && compSelection == "paper") {
-        return "You win! Scissor cuts paper!";
-          }   
-     else {
-        return "Invalid submission!";
-              } 
+//game with button choice 
+
+function play_round(user,compSelection) {
+
+  if (user == compSelection) {
+    console.log ("tie!");
+    document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
+    document.getElementById('game').innerHTML = "Tie!";
   }
-  
-console.log (gameresult(playerSelection,compSelection));
-  
-//write gameresult result to homepage
-let result2 = gameresult(playerSelection,compSelection);
-const game = document.getElementById('game');
-game.innerHTML = result2;
+  if (user == "rock" && compSelection == "scissor") {
+    console.log ("You win! Rock breaks scissors!");
+    document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
+    document.getElementById('game').innerHTML = "You win! Rock breaks scissors!";
+  }
+  if (user == "rock" && compSelection == "paper") {
+    console.log ("You lose! Paper covers rock!");
+    document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
+    document.getElementById('game').innerHTML = "You lose! Paper covers rock!";
+  }
+  if (user == "paper" && compSelection == "scissor") {
+    console.log ("You lose! Scissor cuts paper!");
+    document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
+    document.getElementById('game').innerHTML = "You lose! Scissor cuts paper!";
+  }
+  if (user == "paper" && compSelection == "rock") {
+    console.log ("You win! Paper covers rock!");
+    document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
+    document.getElementById('game').innerHTML = "You win! Paper covers rock!";
+  }
+  if (user == "scissor" && compSelection == "rock") {
+    console.log ("You lose! Rock breaks scissors!");
+    document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
+    document.getElementById('game').innerHTML = "You lose! Rock breaks scissors!";
+  }
+  if (user == "scissor" && compSelection == "paper") {
+    console.log ("You win! Scissor cuts paper!");
+    document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
+    document.getElementById('game').innerHTML = "You win! Scissor cuts paper!";
+  }
+}
 
+//show result on homepage
+
+//function print_result(){
+  //document.getElementById("game_result").innerHTML = play_round(user,compSelection);
+//}
+/*
+function game_result(user,compSelection){
+  let result = play_round(user,compSelection);
+  const game = document.getElementById('game');
+  game.innerHTML = result;
+}
+
+
+var game_result;
+function define_game_result(user,compSelection){
+    game_result = play_round(user,compSelection);
+}
+
+function print_game_result(game_result){
+  console.log(game_result);
+  }
+  */
 

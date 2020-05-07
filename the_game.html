@@ -29,30 +29,18 @@ button {
     cursor: pointer;
   }
 </style>
-<script src="game_script.js"> </script>
+<script type="text/javascript" src="game_script.js"> </script>
   <head>
     <div class="container">
       <div class="center">
         <h2>Let's play rock, paper, scissor!</h2>
-        <p>Make your selection</h2>
         <form style="padding10px">
-          <button onClick="choose('rock')">Rock</button>
-          <button onClick="choose('paper')">Paper</button>
-          <button onClick="choose('scissors')">Scissor</button>
-            <script>
-                var user;
-                function choose(choice){
-                user = choice;
-                      }
-                function test(click){
-                alert("You chose " + user);
-                    }        
-            </script>
+          <button type="button" onClick="choose('rock'); set_cpu_choice(things); print_choices(user, compSelection); play_round(user,compSelection)">Rock</button>
+          <button type="button" onClick="choose('paper'); set_cpu_choice(things); print_choices(user, compSelection); play_round(user,compSelection)">Paper</button>
+          <button type="button" onClick="choose('scissor'); set_cpu_choice(things); print_choices(user, compSelection); play_round(user,compSelection)">Scissor</button>
          </form>
-         <p>
-          <div id="game"></div>
-          <div id="button"></div>
-        </p>
+         <p id='choices'></p>
+         <p id='game' style="color:blue">Make your selection</p>
     </div>
       </div>
   </head>
