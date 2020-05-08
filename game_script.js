@@ -44,6 +44,8 @@ function test(click){
 
 var human_score = 0;
 var cpu_score = 0;
+var win = 5;
+
 
 //push player choices to console
 
@@ -61,65 +63,70 @@ function play_round(user,compSelection) {
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You win! Rock breaks scissors!";
     human_score ++;
+    //end_game(human_score,cpu_score);
     document.getElementById('human_score').innerHTML = human_score;
-  }
+    } 
+    
   if (user == "rock" && compSelection == "paper") {
     console.log ("You lose! Paper covers rock!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You lose! Paper covers rock!";
     cpu_score ++;
+    //end_game(human_score,cpu_score);
     document.getElementById('cpu_score').innerHTML = cpu_score;
   }
+
   if (user == "paper" && compSelection == "scissor") {
     console.log ("You lose! Scissor cuts paper!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You lose! Scissor cuts paper!";
     cpu_score ++;
+    //end_game(human_score,cpu_score);
     document.getElementById('cpu_score').innerHTML = cpu_score;
   }
+
   if (user == "paper" && compSelection == "rock") {
     console.log ("You win! Paper covers rock!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You win! Paper covers rock!";
     human_score ++;
+    //end_game(human_score,cpu_score);
     document.getElementById('human_score').innerHTML = human_score;
   }
+
   if (user == "scissor" && compSelection == "rock") {
     console.log ("You lose! Rock breaks scissors!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You lose! Rock breaks scissors!";
     cpu_score ++;
+    //end_game(human_score,cpu_score);
     document.getElementById('cpu_score').innerHTML = cpu_score;
   }
+
   if (user == "scissor" && compSelection == "paper") {
     console.log ("You win! Scissor cuts paper!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You win! Scissor cuts paper!";
     human_score ++;
+    //end_game(human_score,cpu_score);
     document.getElementById('human_score').innerHTML = human_score;
   }
 }
 
-//show result on homepage
-
-//function print_result(){
-  //document.getElementById("game_result").innerHTML = play_round(user,compSelection);
-//}
-/*
-function game_result(user,compSelection){
-  let result = play_round(user,compSelection);
-  const game = document.getElementById('game');
-  game.innerHTML = result;
-}
+// what I need is when cpu_score or human_score hits 10, win or lose flashes somehwere and scores reset
+//I need a fucntion or something that will happen given somehting else happening (cpu_score or human_score hits 10)
+//I need how to make shit happen when something else happens
+// an end game function!
 
 
-var game_result;
-function define_game_result(user,compSelection){
-    game_result = play_round(user,compSelection);
-}
-
-function print_game_result(game_result){
-  console.log(game_result);
-  }
-  */
+function end_game(human_score,cpu_score) {
+  if (human_score == win) {
+    alert("YOU WIN, CONGRATS!");
+    document.location.reload();
+    }
+  if (cpu_score == win) {
+    alert("YOU LOSE, YOU SUCK!");
+    document.location.reload();
+    }
+  } 
 

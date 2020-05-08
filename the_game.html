@@ -59,13 +59,16 @@ p {
       <div class="center">
         <h2>Let's play rock, paper, scissor!</h2>
         <form style="padding10px">
-          <button type="button" onClick="choose('rock'); set_cpu_choice(things); print_choices(user, compSelection); play_round(user,compSelection)">Rock</button>
-          <button type="button" onClick="choose('paper'); set_cpu_choice(things); print_choices(user, compSelection); play_round(user,compSelection)">Paper</button>
-          <button type="button" onClick="choose('scissor'); set_cpu_choice(things); print_choices(user, compSelection); play_round(user,compSelection)">Scissor</button>
+          <button type="button" onClick="choose('rock'); set_cpu_choice(things); print_choices(user, compSelection); 
+          play_round(user,compSelection); end_game(human_score,cpu_score)">Rock</button>
+          <button type="button" onClick="choose('paper'); set_cpu_choice(things); print_choices(user, compSelection); 
+          play_round(user,compSelection); end_game(human_score,cpu_score)">Paper</button>
+          <button type="button" onClick="choose('scissor'); set_cpu_choice(things); print_choices(user, compSelection); 
+          play_round(user,compSelection); end_game(human_score,cpu_score)">Scissor</button>
          </form>
          <p id='choices'>Choices</p>
          <p id='game'>Make your selection</p>
-         <p>Score</p>
+         <p style="font-style:italic">Game to 5</p>
          <p style="display:inline">You:  <p style="display:inline" id='human_score'></p></p>
          <p style="display:inline">Computer:  <p style="display:inline" id='cpu_score'></p></p>
     </div>
