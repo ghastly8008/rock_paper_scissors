@@ -2,11 +2,12 @@
 <style>
   html *
 {
-   font-family: Arial !important;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .container {
   height: 230px;
   position: relative;
+  padding: 40px;
 }
 .center {
   margin: 0;
@@ -19,16 +20,39 @@
 }
 button {
     width : 120px;
-    padding: 8px;
+    padding: 18px 8px 20px 8px;
     margin: 2px;
     border: none;
     box-sizing: border-box;
     background-color: #f2f2f2;
-    border-radius: 3px;
-    color:rgb(95, 95, 95);
+    border-radius: 15px;
+    color:rgb(48, 48, 48);
     cursor: pointer;
+    font-size: 15px;
   }
+
+body {
+  background: url(https://images.unsplash.com/photo-1552152974-19b9caf99137?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+}
+h2 {
+  color: aliceblue;
+  font-size: 35px;
+  padding: 10px;
+}
+
+p {
+  color: aliceblue;
+  font-size: 23px;
+}
+
+
+
 </style>
+<body>
 <script type="text/javascript" src="game_script.js"> </script>
   <head>
     <div class="container">
@@ -39,12 +63,14 @@ button {
           <button type="button" onClick="choose('paper'); set_cpu_choice(things); print_choices(user, compSelection); play_round(user,compSelection)">Paper</button>
           <button type="button" onClick="choose('scissor'); set_cpu_choice(things); print_choices(user, compSelection); play_round(user,compSelection)">Scissor</button>
          </form>
-         <p id='choices'></p>
-         <p id='game' style="color:blue">Make your selection</p>
+         <p id='choices'>Choices</p>
+         <p id='game'>Make your selection</p>
+         <p>Score</p>
+         <p style="display:inline">You:  <p style="display:inline" id='human_score'></p></p>
+         <p style="display:inline">Computer:  <p style="display:inline" id='cpu_score'></p></p>
     </div>
       </div>
   </head>
-  <body>
   </body> 
 </html>
 

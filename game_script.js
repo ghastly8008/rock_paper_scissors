@@ -40,7 +40,10 @@ function choose(choice){
 
 function test(click){
     console.log ("You chose " + user);
-}      
+}   
+
+var human_score = 0;
+var cpu_score = 0;
 
 //push player choices to console
 
@@ -57,31 +60,43 @@ function play_round(user,compSelection) {
     console.log ("You win! Rock breaks scissors!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You win! Rock breaks scissors!";
+    human_score ++;
+    document.getElementById('human_score').innerHTML = human_score;
   }
   if (user == "rock" && compSelection == "paper") {
     console.log ("You lose! Paper covers rock!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You lose! Paper covers rock!";
+    cpu_score ++;
+    document.getElementById('cpu_score').innerHTML = cpu_score;
   }
   if (user == "paper" && compSelection == "scissor") {
     console.log ("You lose! Scissor cuts paper!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You lose! Scissor cuts paper!";
+    cpu_score ++;
+    document.getElementById('cpu_score').innerHTML = cpu_score;
   }
   if (user == "paper" && compSelection == "rock") {
     console.log ("You win! Paper covers rock!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You win! Paper covers rock!";
+    human_score ++;
+    document.getElementById('human_score').innerHTML = human_score;
   }
   if (user == "scissor" && compSelection == "rock") {
     console.log ("You lose! Rock breaks scissors!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You lose! Rock breaks scissors!";
+    cpu_score ++;
+    document.getElementById('cpu_score').innerHTML = cpu_score;
   }
   if (user == "scissor" && compSelection == "paper") {
     console.log ("You win! Scissor cuts paper!");
     document.getElementById('choices').innerHTML = "Computer chose " + compSelection + ", you chose " + user;
     document.getElementById('game').innerHTML = "You win! Scissor cuts paper!";
+    human_score ++;
+    document.getElementById('human_score').innerHTML = human_score;
   }
 }
 
